@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Coin } from './shared/coin.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ch45-Oefening-Debug';
+  selectedCoin: Coin;
+  
+  selectCoin(event): void{
+    this.selectedCoin = event;
+    console.log(event);
+  }
+
+  close(): void{
+    this.selectedCoin = undefined;
+  }
 }
